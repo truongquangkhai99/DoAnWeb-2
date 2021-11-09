@@ -24,7 +24,7 @@
         border-radius: 5px;
       }
      #edit  button {
-        margin: 10px 0 20 0;
+        margin: 10px 0 20px 0;
         height: 30px;
         border: 1px solid #e7e7e7;
         border-radius: 5px;
