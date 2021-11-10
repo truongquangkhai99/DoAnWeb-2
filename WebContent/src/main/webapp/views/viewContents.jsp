@@ -1,5 +1,20 @@
-
-<div  class="view-content">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+    	var timeDelay = 1000;           // MILLISECONDS (5 SECONDS).
+    	setTimeout( function (){
+        		$(".view-content").removeClass("hide");
+        		$(".loading").addClass("hide");
+        	}, timeDelay);
+    	
+    });	
+   
+</script>
+</head>
+<div class="loading">Loading</div>
+<div  class="view-content hide">
 	<h1 style="">View Content</h1>
 	<div class="content-container" >
 		<div class="header-content" >View Content List</div>
@@ -13,34 +28,15 @@
 				    <th>Action</th>
 				  </tr></thead>
 				  <tbody>
+				  <c:forEach var="content" items="${listContent}">
 				    <tr>
-				      <td data-label="Name">1</td>
-				      <td data-label="Age">24</td>
-				      <td data-label="Job">Engineer</td>
-				      <td data-label="Job">Engineer</td>
+				      <td data-label="Name"><c:out value="${content.id}"/></td>
+				      <td data-label="Age"><c:out value="${content.title}"/></td>
+				      <td data-label="Job"><c:out value="${content.brief}"/></td>
+				      <td data-label="Job"><c:out value="${content.datecreate}"/></td>
 				      <td data-label="Job"><a href="#">Edit</a> <p > Delete </p></td>
 				    </tr>
-				    <tr>
-				      <td data-label="Name">2</td>
-				      <td data-label="Age">24</td>
-				      <td data-label="Job">Engineer</td>
-				      <td data-label="Job">Engineer</td>
-				      <td data-label="Job"><a href="#">Edit</a> <p > Delete </p></td>
-				    </tr>
-				    <tr>
-				      <td data-label="Name">3</td>
-				      <td data-label="Age">24</td>
-				      <td data-label="Job">Engineer</td>
-				      <td data-label="Job">Engineer</td>
-				      <td data-label="Job"><a href="#">Edit</a> <p > Delete </p></td>
-				    </tr>
-				    <tr>
-				      <td data-label="Name">4</td>
-				      <td data-label="Age">24</td>
-				      <td data-label="Job">Engineer</td>
-				      <td data-label="Job">Engineer</td>
-				      <td data-label="Job"><a href="#">Edit</a> <p > Delete </p></td>
-				    </tr>
+				    </c:forEach>
 				    
 				  </tbody>
 				</table>
@@ -125,6 +121,16 @@ background:#fff;'
 	cursor: pointer;
 	margin-left: 10px;
 	color: #4183c4;
+}
+
+.loading{
+    margin-left: 45px;
+    margin-top: 34px;
+    font-size: 24px;
+}
+
+.hide {
+    display: none
 }
 
 </style>
