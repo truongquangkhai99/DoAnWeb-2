@@ -1,25 +1,101 @@
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style type="text/css">
-*{
-	font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+
+<div  class="view-content">
+	<h1 style="">View Content</h1>
+	<div class="content-container" >
+		<div class="header-content" >View Content List</div>
+			<div class ="table-content" >		
+				<table class="ui celled table">
+				  <thead>
+				    <tr><th>#</th>
+				    <th>Title</th>
+				    <th>Brief</th>
+				    <th>Date Create</th>
+				    <th>Action</th>
+				  </tr></thead>
+				  <tbody>
+				    <tr>
+				      <td data-label="Name">1</td>
+				      <td data-label="Age">24</td>
+				      <td data-label="Job">Engineer</td>
+				      <td data-label="Job">Engineer</td>
+				      <td data-label="Job"><a href="#">Edit</a> <p > Delete </p></td>
+				    </tr>
+				    <tr>
+				      <td data-label="Name">2</td>
+				      <td data-label="Age">24</td>
+				      <td data-label="Job">Engineer</td>
+				      <td data-label="Job">Engineer</td>
+				      <td data-label="Job"><a href="#">Edit</a> <p > Delete </p></td>
+				    </tr>
+				    <tr>
+				      <td data-label="Name">3</td>
+				      <td data-label="Age">24</td>
+				      <td data-label="Job">Engineer</td>
+				      <td data-label="Job">Engineer</td>
+				      <td data-label="Job"><a href="#">Edit</a> <p > Delete </p></td>
+				    </tr>
+				    <tr>
+				      <td data-label="Name">4</td>
+				      <td data-label="Age">24</td>
+				      <td data-label="Job">Engineer</td>
+				      <td data-label="Job">Engineer</td>
+				      <td data-label="Job"><a href="#">Edit</a> <p > Delete </p></td>
+				    </tr>
+				    
+				  </tbody>
+				</table>
+		</div>
+	</div>
+</div>
+
+<style>
+section{
+	padding: 40px 30px 0;
 }
 
-aside {
-    margin-left: 17px;
-    width:19%;
+.view-content h1{
+	border-bottom: solid #eee 1.4px; 
+	padding-bottom: 10px;
+	font-weight: 500;
 }
-section{
-    width:78%;
+
+.content-container {
+	border:  2px solid #eee; 
+	border-radius: 10px;
 }
-.view-content {
-	font-size: 18px;
-	/*padding: 10px;*/
+.content-container .header-content{
+	background-color: #eeeeee9c;
+	padding-top: 10px;
+	margin-top: -1px;padding-left: 20px ;
+	padding-bottom: 10px ; 
+	font-size: 16px;
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
+.content-container .table-content{
+	padding: 12px 12px 24px;
+}
+
+.table-content table{
+    border-radius: 0 !important;
+}
+
+.table-content .table thead th {
+	font-weight:1000;
+}
+
+.table-content table tr:nth-child(2n+1)
+{
+	background: #eeeeee9c;
+}
+.ui.table thead th{
+background:#fff;'
+}
+
+
+
 .table-content tbody td:first-child {
-	max-width: 40px;
+	max-width: 20px;
 	word-wrap:break-word;
 }
 .table-content tbody td:nth-child(2){
@@ -43,55 +119,12 @@ section{
 	word-wrap: break-word;
 	text-align: center;
 }
-.table-content tbody td:nth-child(5) a:first-child{
-	margin-right: 10px;
+
+.table-content td p{
+	display:inline-block;
+	cursor: pointer;
+	margin-left: 10px;
+	color: #4183c4;
 }
 
 </style>
-</head>
-			<div class="view-content">
-				<h1>View Content</h1>
-				<hr style="border-top: 2px solid #eee;">
-				<div class ="table-content" style="border:  2px solid #eee;padding: 12px 12px 24px; border-radius: 10px;">					
-					<table class="table table-bordered">
-						<thead>
-						  <tr>
-							<th scope="col" >#</th>
-							<th scope="col">Title</th>
-							<th scope="col">Brief</th>
-							<th scope="col">Create Date</th>
-							<th scope="col">Action</th>
-	
-						
-						  </tr>
-						</thead>
-						<tbody>
-						
-						  <tr>
-						   <td>1fasdfasdfasdfdsf</td>
-							<td>Ngueyn</td>
-							<td> A adfasdfas234 234234234 34hdhdhdd</td>
-							<td> adfasdfas23423 423423423 4234234222 22222342 3fdgsdfgsdfgs</td>
-							<td> <a href="#">Edit</a> <a href="#">Delete</a></td>
-						  </tr>
-						  <tr>
-							<td>2</td>
-							 <td>ádfadsfad</td>
-							 <td> adsfasdfsd</td>
-							 <td> fdasdfadsf</td>
-							 <td> <a href="#">Edit</a> <a href="#">Delete</a></td>
-						   </tr>
-						   <tr>
-							<td>3</td>
-							 <td>adsfsdfad</td>
-							 <td> adfasdfasdf3</td>
-							 <td> 4dfadfasdfad</td>
-							 <td> <a href="#">Edit</a> <a href="#">Delete</a></td>
-						   </tr>
-						   
-						</tbody>
-					  </table>
-				</div>
-				
-			</div>
-
