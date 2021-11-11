@@ -1,3 +1,8 @@
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>--%>
+<%@page import="models.Login" %>
+<%@ page pageEncoding="utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Edit Profile</title>
@@ -47,9 +52,13 @@
     </style>
   </head>
   <body>
+  
+  
+
+  
     <div style="padding-top:20px">
       <h1>
-        Edit ProFile
+        Edit ProFile 
       </h1>
     </div>
     <hr />
@@ -68,6 +77,7 @@
                 type="text"
                 id="firstName"
                 name="firstName"
+                value="${firstName}"
                 placeholder="Enter First Name"
               />
             </td>
@@ -81,6 +91,7 @@
                 type="text"
                 id="lastName"
                 name="lastName"
+                value="${lastName}"
                 placeholder="Enter Last Name"
               />
             </td>
@@ -89,7 +100,7 @@
             <td><lable><b>Email</b></lable></td>
           </tr>
           <tr>
-            <td class="email"><lable>tranthanhquang2704@gmail.com</lable></td>
+            <td class="email"><lable>${email}</lable></td>
           </tr>
           <tr>
             <td><lable><b>Phone</b></lable></td>
@@ -101,6 +112,7 @@
                 id="phone"
                 name="phone"
                 placeholder="Enter your phone number"
+                value="${Phone}"
               />
             </td>
           </tr>
@@ -108,11 +120,11 @@
             <td><lable><b>Description</b></lable></td>
           </tr>
           <tr>
-            <td><input type="text" id="description" name="description" /></td>
+            <td><input type="text" style="height: 60px" id="description" name="description" value ="${description}"></td>
           </tr>
           <tr>
             <td>
-              <button type="submit" id="submit">Submit botton</button>
+              <button type="submit" id="submit" formaction="login" formmethod="post">Submit botton</button>
               <button type="submit" id="reset">
                 Reset button
               </button>

@@ -7,10 +7,6 @@
 	font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }
 
-aside {
-    margin-left: 17px;
-    width:19%;
-}
 section{
     width:78%;
 }
