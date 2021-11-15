@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpSession;
+
 import com.mysql.cj.xdevapi.PreparableStatement;
 
 import models.Login;
@@ -17,8 +19,8 @@ public class controler {
 	private String jdbcURL="jdbc:mysql://localhost:3306/doanweb";
 	private  String jdbcUserName="root";
 	private String jdbcPass="thanhquang2k1";
-	private static final String select_member ="select FisrtName,LastName,Email,Phone,Description from Member where UserName = ? and Password= ?;";
-	private static final String update_profile ="update Member set FisrtName=?,LastName= ? , UserName=? , Phone=? , Description=? where Email=?;";
+	private static final String select_member ="select id,FisrtName,LastName,Email,Phone,Description from Member where UserName = ? and Password= ?;";
+	private static final String update_profile ="update Member set FisrtName=?,LastName= ?, Phone=? , Description=? where id=?;";
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -40,15 +42,17 @@ public class controler {
         System.out.println(connection);
         return connection;
     }
-    public boolean updateProfile(String a , String b, String c, String d, String e) throws SQLException{
+
+    
+    public boolean updateProfile(Login e) throws SQLException{
     	boolean rowUpdated;
     	 try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(update_profile);) {
-             statement.setString(1, a);
-             statement.setString(2,	b);
-             statement.setString(3, c);
-             statement.setString(4, d);
-             statement.setString(5, e);
-             
+             statement.setString(1,e.getFirstName());
+             statement.setString(2,e.getLastName());
+             statement.setString(3,e.getPhone());
+             statement.setString(4,e.getDescription());
+             statement.setString(5,e.getID());
+         
              rowUpdated = statement.executeUpdate() >0;
     	 }
     	 System.out.println(rowUpdated);
@@ -68,40 +72,29 @@ public class controler {
     		ResultSet rs=preparedStatement.executeQuery();
     		System.out.println(rs);
     		while(rs.next())
-    		{
+    		{	
+    			String id=rs.getString("id");
+    			System.out.println("FisrtName =" + id);
     			String FisrtName=rs.getString("FisrtName");
-    			System.out.println("member khi them" + FisrtName);
+    			System.out.println("FisrtName =" + FisrtName);
     			String LastName=rs.getString("LastName");
-    			System.out.println("member khi them" + LastName);
+    			System.out.println("LastName = " + LastName);
     			String Email=rs.getString("Email");
-    			System.out.println("member khi them" + Email);
+    			System.out.println("Email = " + Email);
     			String Phone=rs.getString("Phone");
-    			System.out.println("member khi them" + Phone);
+    			System.out.println("Phone = " + Phone);
     			String Description=rs.getString("Description");
-    			System.out.println("member khi them" + Description);
-    			member = new Login(FisrtName,LastName,Email,Phone,Description);
+    			System.out.println("Description = " + Description);
+    			
+    			member = new Login(id,FisrtName,LastName,Email,Phone,Description);
     		}
     		
     	} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			printSQLException(e);
+			e.printStackTrace();
 		}
-    	System.out.println("member khi them" + member.getFirstName());
+    	System.out.println("firstname" + member.getFirstName());
     	return member;
     }
-    private void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
-            if (e instanceof SQLException) {
-                e.printStackTrace(System.err);
-                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
-                System.err.println("Message: " + e.getMessage());
-                Throwable t = ex.getCause();
-                while (t != null) {
-                    System.out.println("Cause: " + t);
-                    t = t.getCause();
-                }
-            }
-        }
-    }
+   
 }
