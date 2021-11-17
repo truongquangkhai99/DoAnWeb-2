@@ -37,7 +37,7 @@
       #add #content {
         height: 130px;
         
-      }#add
+      }
      #add .head {
         padding: 10px 0 10px 20px;
         border: 1px solid #e7e7e7;
@@ -55,7 +55,7 @@
         Add Content
       </h1>
     </div>
-    <hr style="margin-left:30px" />
+    <hr style="margin-left:30px"/>
     <div id="add">
       <form>
         <table>

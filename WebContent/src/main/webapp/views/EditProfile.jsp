@@ -48,7 +48,6 @@ body {
 	padding: 10px 0 10px 20px;
 	border: 1px solid #e7e7e7;
 	background-color: #f8f8f8;
-	border-radius: 5px;
 }
 #editProfile textarea {
 	width:80%;
