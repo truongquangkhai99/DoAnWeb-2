@@ -45,16 +45,17 @@
       }
       #add {
         margin-top: 30px;
+        margin-left:30px;
       }
     </style>
   </head>
   <body>
-    <div style="padding-top:20px">
+    <div style="padding-top:20px ;margin-left:30px;">
       <h1>
         Add Content
       </h1>
     </div>
-    <hr />
+    <hr style="margin-left:30px" />
     <div id="add">
       <form>
         <table>

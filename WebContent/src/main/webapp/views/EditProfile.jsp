@@ -10,22 +10,29 @@
 body {
 	margin-left: 0px;
 }
+#editProfile {
+	border-radius: 5px;
+}
 #edit table {
 	width: 100%;
 	border-collapse: collapse;
 	font-size: 20px;
 	border: 1px solid #e7e7e7;
+	border-radius: 5px;
 }
 #edit  td {
 	padding-left: 20px;
 	width: 80px;
+	
 }
-#edit   input {
+#edit input {
+	
 	width: 80%;
 	height: 30px;
 	margin: 10px 0 10px 0;
 	border: 1px solid #e7e7e7;
 	border-radius: 5px;
+	padding-left:10px;
 }
 #edit  button {
 	margin: 10px 0 20px 0;
@@ -34,9 +41,6 @@ body {
 	border-radius: 5px;
 	background-color: White;
 }
-#description {
-	height: 60px;
-}
 #edit   .email {
 	padding: 15px 0 15px 20px;
 }
@@ -44,9 +48,18 @@ body {
 	padding: 10px 0 10px 20px;
 	border: 1px solid #e7e7e7;
 	background-color: #f8f8f8;
+	border-radius: 5px;
+}
+#editProfile textarea {
+	width:80%;
+	border:1px solid #e7e7e7;
+	border-radius: 5px;
+	padding:10px 0 10px 10px;
+	margin:10px 0 10px 0;
 }
 #edit {
 	margin-top: 30px;
+	margin-left:30px;
 }
 </style>
 </head>
@@ -54,12 +67,12 @@ body {
 
 <body>
 	<div class="Profile hide">
-		<div style="padding-top: 20px">
+		<div style="padding-top: 20px ; margin-left:30px">
 			<h1>Edit ProFile</h1>
 		</div>
-		<hr />
+		<hr style="margin-left:30px; border:0.5px solid #e7e7e7"/>
 		<div id="edit">
-			<form>
+			<form id="editProfile">
 				<table>
 					<tr>
 						<td class="head">Profile form Elements</td>
@@ -103,14 +116,13 @@ body {
 							<b>Description</b></lable></td>
 					</tr>
 					<tr>
-						<td><input type="text" style="height: 60px" id="description"
-							name="description" value="${description}"></td>
+						<td><textarea rows="3"  name="description" form="editProfile" >${description}</textarea></td>
 					</tr>
 					<tr>
 						<td>
-							<button type="submit" id="submit" formaction="<%=request.getContextPath()%>/login"
+							<button type="submit" id="submit" formaction="login"
 								formmethod="post">Submit button</button>
-							<button type="submit" id="reset()">Reset button</button>
+							<button type="button" id="reset" onclick="">Reset button</button>
 						</td>
 					</tr>
 				</table>
