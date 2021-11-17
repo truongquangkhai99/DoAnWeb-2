@@ -5,25 +5,25 @@
       body {
         margin-left: 0px;
       }
-      table {
+      #add table {
         width: 100%;
         border-collapse: collapse;
         font-size: 20px;
         border: 1px solid #e7e7e7;
       }
 
-      td {
+      #add td {
         padding-left: 20px;
         width: 80px;
       }
-      input {
+     #add input {
         width: 80%;
         height: 30px;
         margin: 10px 0 10px 0;
         border: 1px solid #e7e7e7;
         border-radius: 5px;
       }
-      button {
+    #add  button {
         margin: 10px 0 20px 0;
         height: 30px;
         border: 1px solid #e7e7e7;
@@ -38,7 +38,7 @@
         height: 130px;
         
       }
-      .head {
+     #add .head {
         padding: 10px 0 10px 20px;
         border: 1px solid #e7e7e7;
         background-color: #f8f8f8;
