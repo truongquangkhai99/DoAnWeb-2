@@ -30,14 +30,14 @@
         border-radius: 5px;
         background-color: White;
       }
-      #brief {
+      #add #brief {
         height: 82px;
        
       }
-      #content {
+      #add #content {
         height: 130px;
         
-      }
+      }#add
      #add .head {
         padding: 10px 0 10px 20px;
         border: 1px solid #e7e7e7;
