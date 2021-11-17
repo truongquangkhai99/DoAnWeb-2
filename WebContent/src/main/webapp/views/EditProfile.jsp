@@ -110,7 +110,7 @@ body {
 						<td>
 							<button type="submit" id="submit" formaction="<%=request.getContextPath()%>/login"
 								formmethod="post">Submit button</button>
-							<button type="submit" id="reset">Reset button</button>
+							<button type="submit" id="reset()">Reset button</button>
 						</td>
 					</tr>
 				</table>

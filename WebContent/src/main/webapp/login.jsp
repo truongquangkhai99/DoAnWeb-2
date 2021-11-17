@@ -13,7 +13,7 @@
                 <p><input type="email" placeholder="E-mail" size="50" minlength="5" maxlength="50" id="email"></p>
                 <p><input type="password" placeholder="Password" size="50" min="8" maxlength="30" id="password"></p>
                 <p><input type="checkbox" size="1" id="checkbox"> Remember Me</p>
-                <p><input type="button" value="Login" id="btnLogin" formaction="index.jsp" formmethod="get"></p>
+                <p><a href="index.jsp"><input type="button" value="Login" id="btnLogin" formaction="index.jsp" formmethod="get"></a></p>
                 <p><a href="register.jsp">Click here to Register</a></p>
             </form>
         </div>
