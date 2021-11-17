@@ -5,26 +5,9 @@
 
 <head>
 <title>Edit Profile</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-	$(document).ready(function() {
-		var timeDelay = 1000; // MILLISECONDS (5 SECONDS).
-		setTimeout(function() {
-			$(".Profile").removeClass("hide");
-			$(".loading").addClass("hide");
-		}, timeDelay);
-	});
-</script>
+
 <style>
-.loading{
-    margin-left: 45px;
-    margin-top: 34px;
-    font-size: 24px;
-}
-.hide {
-    display: none
-}
+
 body {
 	margin-left: 0px;
 }
@@ -78,8 +61,7 @@ body {
 </head>
 
 
-
-	<div class="loading">Loading</div>
+<body>
 	<div class="Profile hide">
 		<div style="padding-top: 20px">
 			<h1>Edit ProFile</h1>
@@ -145,7 +127,7 @@ body {
 		</div>
 	</div>
 	
-	
+</body>
 	<script>
 	function reset() {
 		document.getElementById('firstName').innerHTML="";
