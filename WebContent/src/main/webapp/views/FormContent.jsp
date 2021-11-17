@@ -3,7 +3,7 @@
     <title>Add Content</title>
     <style>
       body {
-        margin-left: 20px;
+        margin-left: 0px;
       }
       table {
         width: 100%;
@@ -24,18 +24,18 @@
         border-radius: 5px;
       }
       button {
-        margin: 10px 0 20 0;
+        margin: 10px 0 20px 0;
         height: 30px;
         border: 1px solid #e7e7e7;
         border-radius: 5px;
         background-color: White;
       }
       #brief {
-        height: 45px;
+        height: 82px;
        
       }
       #content {
-        height: 100px;
+        height: 130px;
         
       }
       .head {
