@@ -18,9 +18,20 @@
 		<servlet-class>org.apache.tiles.web.util.TilesDispatchServlet
 		</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ContentViewServlet</display-name>
+		<servlet-name>ContentViewServlet</servlet-name>
+		<servlet-class>controller.ContentViewServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Tiles Dispatch</servlet-name>
 		<url-pattern>*.tiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ContentViewServlet</servlet-name>
+		<url-pattern>/ContentViewServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

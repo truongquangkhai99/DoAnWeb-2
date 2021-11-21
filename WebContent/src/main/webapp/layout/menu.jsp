@@ -54,7 +54,7 @@
 
           <tr>
             <td>
-           <a href="viewContents.tiles"> <i class="th icon"></i>view contents</a>
+           <a href="<%=request.getContextPath()%>/ViewContent?pageid=1"> <i class="th icon"></i>view contents</a>
             </td>
           </tr>
           <tr>
