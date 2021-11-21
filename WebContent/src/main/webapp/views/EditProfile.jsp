@@ -5,9 +5,16 @@
 
 <head>
 <title>Edit Profile</title>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#submit').click(function(){
+				alert('thanh cong');
+			})
+		});
+	</script>
 <style>
-
+	
 body {
 	margin-left: 0px;
 }
@@ -117,9 +124,8 @@ body {
 					</tr>
 					<tr>
 						<td>
-							<button type="submit" id="submit" formaction="<%=request.getContextPath()%>/login"
-								formmethod="post">Submit button</button>
-							<button type="submit" id="reset">Reset button</button>
+							<button type="button" id="submit">Submit button</button>
+							<button type="submit" id="reset" formaction="reset" formmethod="post">Reset button</button>
 						</td>
 					</tr>
 				</table>

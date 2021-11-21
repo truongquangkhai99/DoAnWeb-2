@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSessionContext;
 import models.Login;
 import controller.controler;
 
-@WebServlet("/login")
+@WebServlet("/")
 public class servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      private controler memberserlet ;
@@ -47,15 +47,21 @@ public class servlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
-			try {
-				update_profile(req, resp);
-			} catch (SQLException | ServletException | IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			String action=req.getServletPath().toString();
+			System.out.println(action);
+			switch (action) {
+				case "/reset":
+					req.getRequestDispatcher("login.jsp").forward(req, resp);
+					break;
+				case "/submit":
+					try {
+						update_profile(req, resp);
+					} catch (SQLException | ServletException | IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					break;
 			}
-		
-	
 	}
 	private void  update_profile (HttpServletRequest request , HttpServletResponse response) 
 			throws SQLException ,ServletException , IOException{
