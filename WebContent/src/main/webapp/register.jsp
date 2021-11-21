@@ -15,7 +15,8 @@
                 <p><input type="password" placeholder="Password" size="50" min="8" maxlength="30" id="password"></p>
                 <p><input type="password" placeholder="Re Password" min="8" maxlength="30" id="repassword"></p>
                 <p><input type="button" value="Register" id="btnRegister"></p>
-                <p><a href="Register.html">Click here to Login</a></p>
+                <p><a href="login.jsp">Click here to Login</a></p>
+              
             </form>
         </div>
     </body>

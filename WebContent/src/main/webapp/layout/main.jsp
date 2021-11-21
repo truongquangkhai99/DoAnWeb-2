@@ -54,6 +54,13 @@ section {
   position: relative;
   display: inline-block;
   float:right;
+  
+}
+.dropdown a{
+ color: black;
+}
+.dropdown i{
+ color: black;
 }
 
 .dropdown-content {

@@ -96,10 +96,12 @@ body {
 					</tr>
 					<tr>
 						<td><lable>
-							<b>Email</b></lable></td>
+							<b>Email</b>  </lable></td>
+							
 					</tr>
 					<tr>
 						<td class="email"><lable>${email}</lable></td>
+						
 					</tr>
 					<tr>
 						<td><lable>
