@@ -5,16 +5,33 @@
 
 <head>
 <title>Edit Profile</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('#submit').click(function(){
-				alert('thanh cong');
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#submit').click(function() {
+			var firstName=$('#firstName').val();
+			var lastName=$('#lastName').val();
+			var email=$('#email').val();
+			var phone=$('#phone').val();
+			var description=$('#description').val();
+			$.ajax({
+				url:"/WebContent/editprofile",
+				type:"post",
+				data:{
+					firstName:firstName,
+					lastName:lastName,
+					email:email,
+					phone:phone,
+					description:description
+				}
+				
 			})
-		});
-	</script>
+		})
+	});
+</script>
+
 <style>
-	
 body {
 	margin-left: 0px;
 }
@@ -75,48 +92,41 @@ body {
 		</div>
 		<hr />
 		<div id="edit">
-			<form>
+			<form id="formEditProfile">
 				<table>
 					<tr>
 						<td class="head">Profile form Elements</td>
 					</tr>
 					<tr>
-						<td style="padding-top: 20px"><lable>
-							<b>First Name</b></lable></td>
+						<td style="padding-top: 20px"><lable> <b>First
+								Name</b></lable></td>
 					</tr>
 					<tr>
 						<td><input type="text" id="firstName" name="firstName"
-							value="${firstName}" placeholder="Enter First Name" />
-						</td>
+							value="${firstName}" placeholder="Enter First Name" /></td>
 					</tr>
 					<tr>
-						<td><lable>
-							<b>Last Name</b></lable></td>
+						<td><lable> <b>Last Name</b></lable></td>
 					</tr>
 					<tr>
 						<td><input type="text" id="lastName" name="lastName"
-							value="${lastName}" placeholder="Enter Last Name" />
-						</td>
+							value="${lastName}" placeholder="Enter Last Name" /></td>
 					</tr>
 					<tr>
-						<td><lable>
-							<b>Email</b></lable></td>
+						<td><lable> <b>Email</b></lable></td>
 					</tr>
 					<tr>
-						<td class="email"><lable>${email}</lable></td>
+						<td class="email"><lable> <span id="email">${email}</span></lable></td>
 					</tr>
 					<tr>
-						<td><lable>
-							<b>Phone</b></lable></td>
+						<td><lable> <b>Phone</b></lable></td>
 					</tr>
 					<tr>
 						<td><input type="text" id="phone" name="phone"
-							placeholder="Enter your phone number" value="${Phone}" />
-						</td>
+							placeholder="Enter your phone number" value="${Phone}" /></td>
 					</tr>
 					<tr>
-						<td><lable>
-							<b>Description</b></lable></td>
+						<td><lable> <b>Description</b></lable></td>
 					</tr>
 					<tr>
 						<td><input type="text" style="height: 60px" id="description"
@@ -124,22 +134,17 @@ body {
 					</tr>
 					<tr>
 						<td>
-							<button type="submit" id="submit" formaction="editprofile" formmethod="post">Submit button</button>
-							<button type="submit" id="reset" formaction="editprofile" formmethod="get">Reset button</button>
+							<button type="submit" id="submit" formaction="viewContents.tiles">Submit button</button>
+							<button type="submit" id="reset" formaction="editprofile"
+								formmethod="get">Reset button</button>
 						</td>
 					</tr>
 				</table>
 			</form>
+			
 		</div>
 	</div>
-	
+
 </body>
-	<script>
-	function reset() {
-		document.getElementById('firstName').innerHTML="";
-        document.getElementById('lastName').innerHTML="";
-        document.getElementById('phone').innerHTML="";
-        document.getElementById('description').innerHTML="";
-		}
-	</script>
+
 
