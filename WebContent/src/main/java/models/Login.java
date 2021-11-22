@@ -23,6 +23,15 @@ public class Login {
 		this.Phone=Phone;
 		this.Description=Description;
 	}
+	public Login(String FistName, String LastName , String Email, String Phone , String Description)
+	{	
+		
+		this.FisrtName=FistName;
+		this.LastName=LastName;
+		this.Email=Email;
+		this.Phone=Phone;
+		this.Description=Description;
+	}
 	public String getDescription()
 	{
 		return Description;

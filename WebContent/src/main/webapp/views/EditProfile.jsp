@@ -124,8 +124,8 @@ body {
 					</tr>
 					<tr>
 						<td>
-							<button type="button" id="submit">Submit button</button>
-							<button type="submit" id="reset" formaction="reset" formmethod="post">Reset button</button>
+							<button type="submit" id="submit" formaction="editprofile" formmethod="post">Submit button</button>
+							<button type="submit" id="reset" formaction="editprofile" formmethod="get">Reset button</button>
 						</td>
 					</tr>
 				</table>
