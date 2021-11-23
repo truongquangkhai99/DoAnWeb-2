@@ -12,9 +12,9 @@
   </definition>
   
   <!-- Welcome page -->
-  <definition name="viewContents" extends="main">
+  <definition name="view-content" extends="main">
     <put-attribute name="title" value="View Content"/>
-    <put-attribute name="body" value="/views/viewContents.jsp" />
+    <put-attribute name="body" value="/views/view-contents.jsp" />
   </definition>
   
     <!-- Contact page -->

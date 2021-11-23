@@ -58,7 +58,7 @@ public class ContentViewServlet extends HttpServlet {
 		
 		request.setAttribute("listContent", listContent);
 
-		RequestDispatcher rd = request.getRequestDispatcher("viewContents.tiles");
+		RequestDispatcher rd = request.getRequestDispatcher("view-content.tiles");
 		rd.forward(request, response);
 	}
 	private void deleteContent(HttpServletRequest request, HttpServletResponse response) 
