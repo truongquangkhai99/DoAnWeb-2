@@ -108,23 +108,17 @@ public class servlet extends HttpServlet {
 	throws SQLException ,ServletException , IOException {
 		String a=request.getParameter("UserName");
 		String b=request.getParameter("Password");
-		Login result = null;
+		String result = null;
 		try {
-			result = memberserlet.selectMember(a, b);
+			result = memberserlet.selectID(a, b);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(result.getEmail());
+		
 		HttpSession session =request.getSession();
-		session.setAttribute("id", result.getID());
-		//session.setAttribute("member",result);
-		session.setAttribute("email", result.getEmail());
-		session.setAttribute("firstName", result.getFirstName());
-		session.setAttribute("lastName", result.getLastName());
-		session.setAttribute("Phone", result.getPhone());
-		session.setAttribute("description", result.getDescription());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Editprofile.tiles");
+		session.setAttribute("id", result);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewContents.tiles");
 		dispatcher.forward(request, response);
 	}
 	

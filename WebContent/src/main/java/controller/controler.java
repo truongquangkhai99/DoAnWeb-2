@@ -19,7 +19,7 @@ public class controler {
 	private String jdbcURL="jdbc:mysql://localhost:3306/doanweb";
 	private  String jdbcUserName="root";
 	private String jdbcPass="thanhquang2k1";
-	private static final String select_member ="select id,FisrtName,LastName,Email,Phone,Description from Member where UserName = ? and Password= ?;";
+	private static final String select_id ="select id from Member where Email = ? and Password= ?;";
 	private static final String update_profile ="update Member set FisrtName=?,LastName= ?, Phone=? , Description=? where id=?;";
 	private static final String select_editprofile ="select FisrtName,LastName,Email,Phone,Description from Member where id=?;";
     protected Connection getConnection() {
@@ -94,13 +94,13 @@ public class controler {
     	System.out.println("firstname" + selectProfile.getFirstName());
     	return selectProfile;
     }
-    public Login selectMember(String a, String b) throws SQLException
+    public String selectID(String a, String b) throws SQLException
     {	
     	System.out.println(a);
     	System.out.println(b);
-    	Login member=null;
+    	String id=null;
     	try(Connection connection= getConnection();
-    		PreparedStatement preparedStatement=connection.prepareStatement(select_member);)
+    		PreparedStatement preparedStatement=connection.prepareStatement(select_id);)
     	{
     		preparedStatement.setString(1, a);
     		preparedStatement.setString(2, b);
@@ -109,28 +109,17 @@ public class controler {
     		System.out.println(rs);
     		while(rs.next())
     		{	
-    			String id=rs.getString("id");
-    			System.out.println("FisrtName =" + id);
-    			String FisrtName=rs.getString("FisrtName");
-    			System.out.println("FisrtName =" + FisrtName);
-    			String LastName=rs.getString("LastName");
-    			System.out.println("LastName = " + LastName);
-    			String Email=rs.getString("Email");
-    			System.out.println("Email = " + Email);
-    			String Phone=rs.getString("Phone");
-    			System.out.println("Phone = " + Phone);
-    			String Description=rs.getString("Description");
-    			System.out.println("Description = " + Description);
+    			id=rs.getString("id");	
+    			System.out.println(id);
     			
-    			member = new Login(id,FisrtName,LastName,Email,Phone,Description);
     		}
     		
     	} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	System.out.println("firstname" + member.getFirstName());
-    	return member;
+    	System.out.println("id là" + id);
+    	return id;
     }
    
 }

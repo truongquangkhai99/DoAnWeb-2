@@ -1,4 +1,58 @@
-$("#formEditProfile").validate({
+$().ready(function() {
+	$("#formEditProfile").validate({
+		onfocusout: false,
+		onkeyup: false,
+		onclick: false,
+		rules: {
+			"firstName": {
+				required: true,
+				maxlength: 15
+			},
+			"lastName": {
+				required: true,
+				minlength: 8
+			},
+			"phone": {
+				
+				minlength: 8
+				
+			}
+		},
+		messages: {
+			"firstName": {
+				required: "Bắt buộc nhập username",
+				maxlength: "Hãy nhập tối đa 15 ký tự"
+			},
+			"lastName": {
+				required: "Bắt buộc nhập password",
+				minlength: "Hãy nhập ít nhất 8 ký tự"
+			},
+			"phone": {
+				
+				minlength: "Hãy nhập ít nhất 8 ký tự"
+			}
+		}
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$("#213formEditProfile").validate({
 	rules:{ 
 		firstName:"required",
 		lastName:"required",
