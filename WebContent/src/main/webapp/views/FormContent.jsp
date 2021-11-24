@@ -79,7 +79,7 @@ body {
 							<b>Title</b></lable></td>
 					</tr>
 					<tr>
-						<td><input type="text" id="title" name="title"
+						<td><input type="text" id="title" name="title" minlength="10" maxlength="200"
 							value="${title}" placeholder="Enter the title" />
 						</td>
 					</tr>
@@ -88,14 +88,14 @@ body {
 							<b>Brief</b></lable></td>
 					</tr>
 					<tr>
-						<td><textarea rows="3"  name="brief" form="addContent" >${brief}</textarea></td>
+						<td><textarea rows="3"  name="brief" form="addContent" maxlength="150" minlength="30" >${brief}</textarea></td>
 					</tr>
                                         <tr>
 						<td><lable>
 							<b>Content</b></lable></td>
 					</tr>
 					<tr>
-						<td><textarea rows="5"  name="content" form="addContent" >${content}</textarea></td>
+						<td><textarea rows="5"  name="content" form="addContent" maxlength="1000" minlength="50">${content}</textarea></td>
 					</tr>
 					<tr>
 						<td>
@@ -111,8 +111,10 @@ body {
 	
 </body>
 	<script>
-	function reset() {
+	function resetButton() {
 	document.getElementById('title').innerHTML="";
-        document.getElementById('brief').innerHTML="";
+    document.getElementById('brief').innerHTML="";
+    document.getElementById('content').innerHTML="";
+    document.getElementById("form").reset();
 		}
 	</script>
