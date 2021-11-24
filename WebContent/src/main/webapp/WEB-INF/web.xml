@@ -25,6 +25,14 @@
 		<servlet-name>ContentViewServlet</servlet-name>
 		<servlet-class>controller.ContentViewServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ContentEditServlet</display-name>
+		<servlet-name>ContentEditServlet</servlet-name>
+		<servlet-class>controller.ContentEditServlet</servlet-class>
+	</servlet>
+
 
 	<servlet-mapping>
 		<servlet-name>Tiles Dispatch</servlet-name>
@@ -33,5 +41,9 @@
 	<servlet-mapping>
 		<servlet-name>ContentViewServlet</servlet-name>
 		<url-pattern>/ContentViewServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ContentEditServlet</servlet-name>
+		<url-pattern>/ContentEditServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

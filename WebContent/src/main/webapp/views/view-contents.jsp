@@ -26,7 +26,7 @@
 				      <td ><div><c:out value="${content.title}"/></div></td>
 				      <td ><c:out value="${content.brief}"/></td>
 				      <td ><c:out value="${content.datecreate}"/></td>
-				      <td ><a href="#">Edit</a> <p onclick="$.post('ViewContent', { id :<c:out value='${content.id}' />}); $(this).parent().parent().addClass('hide');" > Delete </p></td>
+				      <td ><a href="EditContent?id=${content.id}">Edit</a> <p onclick="$.post('ViewContent', { id :<c:out value='${content.id}' />}); $(this).parent().parent().addClass('hide');" > Delete </p></td>
 				    </tr>
 				    </c:forEach>
 				    

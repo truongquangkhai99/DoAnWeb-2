@@ -18,12 +18,19 @@
   </definition>
   
     <!-- Contact page -->
-  <definition name="FormContent" extends="main">
-    <put-attribute name="title" value="FormContent" />
+  <definition name="edit-content" extends="main">
+    <put-attribute name="title" value="Edit Content" />
+    <put-attribute name="body" value="/views/edit-content.jsp" />
+  </definition>
+  
+   <definition name="FormContent" extends="main">
+    <put-attribute name="title" value="Edit Content" />
     <put-attribute name="body" value="/views/FormContent.jsp" />
   </definition>
+  
    <definition name="Editprofile" extends="main">
     <put-attribute name="title" value="Editprofile" />
     <put-attribute name="body" value="/views/EditProfile.jsp" />
   </definition>
+  
 </tiles-definitions> 
