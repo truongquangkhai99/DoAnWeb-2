@@ -18,34 +18,17 @@ import model.ContentView;
 
 public class ContentViewDAO {
 
-	private  String jdbcURL = "jdbc:mysql://localhost:3306/DoAnWeb?useSSL=false";
-	private  String jdbcUsername="root";
-	private  String jdbcPassword="D@c12345";
+
 	
 
 	private static final String SELECT_ALL_CONTENT = "SELECT id,Title,Brief,CreatedDate FROM content;";
 	private static final String DELETE_CONTENT_BY_ID = "DELETE FROM content WHERE ID =?;";
+	DBContext context= new DBContext();
 	
-	protected  Connection getConnection() {
-		Connection connection = null;
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}		
-		return connection;
-	}
-		
 	//Delete Content
 	public boolean deleteContent(int id) throws SQLException {
 		boolean rowDeleted;
-		try (Connection connection = getConnection();
+		try (Connection connection = context.getConnection();
 				PreparedStatement statement = connection.prepareStatement(DELETE_CONTENT_BY_ID);) {
 			statement.setInt(1, id);
 			rowDeleted = statement.executeUpdate() > 0;
@@ -56,7 +39,7 @@ public class ContentViewDAO {
 	public int getCountPage(int numberPerPage) {
 		String query = "select count(*) from content;";
 		try {
-			Connection connection = getConnection();
+			Connection connection = context.getConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(query);
 			ResultSet rs = preparedStatement.executeQuery();
 			while(rs.next()) {
@@ -82,7 +65,7 @@ public class ContentViewDAO {
 
 			List<ContentView> contents = new ArrayList<>();
 			// Step 1: Establishing a Connection
-			try (Connection connection = getConnection();
+			try (Connection connection = context.getConnection();
 
 					// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
@@ -107,5 +90,4 @@ public class ContentViewDAO {
 			}
 			return contents;
 		}
-	
 }

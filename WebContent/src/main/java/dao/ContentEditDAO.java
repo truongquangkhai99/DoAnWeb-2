@@ -14,33 +14,16 @@ import model.ContentView;
 
 public class ContentEditDAO {
 	
-	private  String jdbcURL = "jdbc:mysql://localhost:3306/DoAnWeb?useSSL=false";
-	private  String jdbcUsername="root";
-	private  String jdbcPassword="D@c12345";
 	
-	protected  Connection getConnection() {
-		Connection connection = null;
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}		
-		return connection;
-	}
-	
+	private DBContext context = new DBContext();
 	public ContentEdit getContent(int idcontent) 
 	{
 		String query = "SELECT id,Title,Brief,CreatedDate FROM content where id ="+idcontent+ ";";
-
-		ContentEdit content =null;
+		
+		
+		ContentEdit content=null;
 		// Step 1: Establishing a Connection
-		try (Connection connection = getConnection();
+		try (Connection connection = context.getConnection();
 
 				// Step 2:Create a statement using connection object
 			PreparedStatement preparedStatement = connection.prepareStatement(query);) {
@@ -65,7 +48,7 @@ public class ContentEditDAO {
 		PreparedStatement ps = null;
 		String query = "update Content set Title =?,Brief=? ,Content=? where id= ?";
 		try {
-			conn = getConnection();// mở kết nối với mysql
+			conn = context.getConnection();// mở kết nối với mysql
 			ps = conn.prepareStatement(query);
 			ps.setString(1, title);
 			ps.setString(2, brief);
