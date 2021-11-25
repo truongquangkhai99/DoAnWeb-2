@@ -17,12 +17,12 @@
         </div>
         <p id="error"></p>
         <div class="form-grp">
-            <input type="email" name="email" placeholder="E-mail" id = "email" maxlength="50" value="baoquoc789@gmail.com">
+            <input type="email" name="email" placeholder="E-mail" id = "email" maxlength="50" value="">
             <i class="fa fa-times u_times"></i>
             <i class="fa fa-check u_check"></i>
         </div>
         <div class="form-grp">
-            <input type="password" name="password" placeholder="Password" id = "pass" maxlength="30" value="15234622">
+            <input type="password" name="password" placeholder="Password" id = "pass" maxlength="30" value="">
             <i class="fa fa-times p_times"></i>
             <i class="fa fa-check p_check"></i>
         </div>
