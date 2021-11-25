@@ -40,6 +40,10 @@
         background-color:White;
         border:1px solid #e7e7e7;
       }
+      
+      #container-search{
+      	display:inline-block;
+      }
     </style>
   </head>
   <body>
@@ -49,11 +53,13 @@
           <tr>
             <td>
             <input type="text" name="search" id="search" placeholder="Search..."/> 
-              <div >
-                <a id="divSearch">
+            <div id= "container-search">
+              <button>
+                <a id="search">
                 <i class="fa fa-search"></i>
               </a>
-              </div>
+              </<button>
+            </div>
 
             </td>
           </tr>

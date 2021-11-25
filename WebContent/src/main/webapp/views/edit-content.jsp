@@ -1,6 +1,5 @@
-<%-- <%@page import="models.Login"%> --%>
 <%@ page pageEncoding="utf-8"%>
-<%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> --%>
+
 
 
 <head>
@@ -99,7 +98,7 @@ body {
 					</tr>
 					<tr>
 						<td>
-							<button type="submit" id="submit" formaction="login"
+							<button type="submit" id="submit" formaction="/WebContent/ViewContent?pageid=1"
 								formmethod="post">Submit button</button>
 							<button type="button" id="reset" onclick="">Reset button</button>
 						</td>
@@ -110,10 +109,4 @@ body {
 	</div>
 	
 </body>
-	<script>
-	function resetButton() {
-	document.getElementById('title').innerHTML="";
-    document.getElementById('brief').innerHTML="";
-    document.getElementById('content').innerHTML="";
-		}
-	</script>
+	

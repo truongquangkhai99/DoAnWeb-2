@@ -70,6 +70,13 @@ section {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.dropdown a{
+	color: black;
+}
+.dropdown i{
+	color: black;
+}
 </style>
 </head>
 <body>

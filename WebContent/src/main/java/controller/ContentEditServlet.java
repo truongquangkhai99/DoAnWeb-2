@@ -29,7 +29,7 @@ public class ContentEditServlet extends HttpServlet {
 				String id = request.getParameter("id");
 				int idcontent =  Integer.parseInt(id);
 				ContentEdit content = contentDAO.getContent(idcontent);
-				request.setAttribute("content", content);
+				request.setAttribute("st", content);
 				RequestDispatcher rd = request.getRequestDispatcher("edit-content.tiles");
 				rd.forward(request, response);
 	}
