@@ -14,13 +14,13 @@
   <!-- Welcome page -->
   <definition name="view-content" extends="main">
     <put-attribute name="title" value="View Content"/>
-    <put-attribute name="body" value="/views/view-contents.jsp" />
+    <put-attribute name="body" value="/views/viewcontents.jsp" />
   </definition>
   
     <!-- Contact page -->
   <definition name="edit-content" extends="main">
     <put-attribute name="title" value="Edit Content" />
-    <put-attribute name="body" value="/views/edit-content.jsp" />
+    <put-attribute name="body" value="/views/editcontent.jsp" />
   </definition>
   
    <definition name="FormContent" extends="main">
