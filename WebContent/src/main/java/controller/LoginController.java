@@ -55,7 +55,7 @@ public class LoginController extends HttpServlet {
 				// set timeout session (seconds)
 				/* session.setMaxInactiveInterval(60); */
 				// login success
-				response.sendRedirect("view-content.tiles");
+				response.sendRedirect("/WebContent/ViewContent?pageid=1");
 					
 			}else {			
 				// login failed

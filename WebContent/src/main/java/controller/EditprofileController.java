@@ -94,8 +94,10 @@ public class EditprofileController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		response.setContentType("text");
-        response.getWriter().write("update Thành công");
+		response.sendRedirect("/WebContent/ViewContent?pageid=1");
+		
+		//response.setContentType("text");
+       // response.getWriter().write("update Thành công");
        
 		
 	}
