@@ -18,7 +18,7 @@ public class ContentEditDAO {
 	private DBContext context = new DBContext();
 	public ContentEdit getContent(int idcontent) 
 	{
-		String query = "SELECT id,Title,Brief,CreatedDate FROM content where id ="+idcontent+ ";";
+		String query = "SELECT id,Title,Brief,Content FROM content where id ="+idcontent+ ";";
 		
 		
 		ContentEdit content=null;
@@ -34,8 +34,8 @@ public class ContentEditDAO {
 			int id = rs.getInt("id");
 			String title = rs.getString("Title");
 			String brief = rs.getString("Brief");	
-			Date date = rs.getDate("CreatedDate");
-			content= new ContentEdit(id, title, brief, date);
+			String strcontent = rs.getString("Content");
+			content= new ContentEdit(id, title, brief, strcontent);
 		} catch (SQLException e) {
 			e.printStackTrace();//(e);
 		}

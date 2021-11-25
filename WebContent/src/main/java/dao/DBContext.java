@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 public class DBContext {
 	private static String DB_URL = "jdbc:mysql://localhost:3306/doanweb";
     private static String USER_NAME = "root";
-    private static String PASSWORD = "thanhquang2k1";
+    private static String PASSWORD = "D@c12345";
           
     public DBContext()
     {

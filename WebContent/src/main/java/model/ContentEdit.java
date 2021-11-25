@@ -6,21 +6,21 @@ public class ContentEdit {
 	private int id;
 	private String title;
 	private String brief;
-	private Date datecreate;
+	private String content;
 	
 
-	public ContentEdit(String title, String brief, Date datecreate) {
+	public ContentEdit(String title, String brief, String content) {
 		super();
 		this.title = title;
 		this.brief = brief;
-		this.datecreate = datecreate;
+		this.content = content;
 	}
-	public ContentEdit(int id, String title, String brief, Date date) {
+	public ContentEdit(int id, String title, String brief, String content) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.brief = brief;
-		this.datecreate = date;
+		this.content = content;
 	}
 	public int getId() {
 		return id;
@@ -40,10 +40,11 @@ public class ContentEdit {
 	public void setBrief(String brief) {
 		this.brief = brief;
 	}
-	public Date  getDatecreate() {
-		return datecreate;
+	public String getContent() {
+		return content;
 	}
-	public void setDatecreate(Date  datecreate) {
-		this.datecreate = datecreate;
+	public void setContent(String content) {
+		this.content = content;
 	}
+	
 }
