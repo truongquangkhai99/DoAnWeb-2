@@ -5,7 +5,7 @@
 
 <head>
 <title>Add Content</title>
-
+	    <script src="assets/js/formcontent.js" type="text/javascript"></script>
 <style>
 body {
 	margin-left: 0px;
@@ -58,6 +58,11 @@ body {
 	margin-top: 30px;
 	margin-left:30px;
 }
+label.error{
+	font-size:13;
+	color:red;
+	display:block;
+}
 </style>
 </head>
 
@@ -88,14 +93,14 @@ body {
 							<b>Brief</b></lable></td>
 					</tr>
 					<tr>
-						<td><textarea rows="3"  name="brief" form="addContent" >${brief}</textarea></td>
+						<td><textarea rows="3" id="brief"  name="brief" form="addContent" >${brief}</textarea></td>
 					</tr>
                                         <tr>
 						<td><lable>
 							<b>Content</b></lable></td>
 					</tr>
 					<tr>
-						<td><textarea rows="5"  name="content" form="addContent" >${content}</textarea></td>
+						<td><textarea rows="5"  id="content" name="content" form="addContent" >${content}</textarea></td>
 					</tr>
 					<tr>
 						<td>
