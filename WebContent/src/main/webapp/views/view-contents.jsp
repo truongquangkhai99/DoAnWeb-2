@@ -1,8 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="assets/js/view-content.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/css/view-content.css">
+<script src="assets/js/viewcontent.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/viewcontent.css">
 </head>
 
 <div class="loading">Loading</div>
