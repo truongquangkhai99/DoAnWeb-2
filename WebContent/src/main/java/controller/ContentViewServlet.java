@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.ContentView;
 import dao.ContentViewDAO;
+import dao.SearchDAO;
 
 @WebServlet("/ViewContent")
 public class ContentViewServlet extends HttpServlet {
@@ -44,22 +46,22 @@ public class ContentViewServlet extends HttpServlet {
 			throws SQLException, ServletException, IOException {
 		
 		String spageid = request.getParameter("pageid");
-		
 		int pageid =  Integer.parseInt(spageid);
 		int numRowPage = 10;// number row in a page =5
 		
 		int numberpage = contentDAO.getCountPage(numRowPage);
+		List<ContentView> listContent = new ArrayList<ContentView>();
+		listContent = contentDAO.selectAllContents(numRowPage*(pageid-1)+1,numRowPage);
+			
+	
 		
 		request.setAttribute("pageid",pageid );
 		request.setAttribute("numberpage",numberpage );
-		
-		
-		List<ContentView> listContent = contentDAO.selectAllContents(numRowPage*(pageid-1)+1,numRowPage);
-		
 		request.setAttribute("listContent", listContent);
 
 		RequestDispatcher rd = request.getRequestDispatcher("view-content.tiles");
 		rd.forward(request, response);
+		
 	}
 	private void deleteContent(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {

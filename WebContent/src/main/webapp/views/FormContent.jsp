@@ -99,9 +99,9 @@ body {
 					</tr>
 					<tr>
 						<td>
-							<button type="submit" id="submit" formaction="login"
+							<button type="submit" id="addcontent" formaction="AddContent"
 								formmethod="post">Submit button</button>
-							<button type="button" id="reset" onclick="">Reset button</button>
+							<button type="button" id="reset" >Reset button</button>
 						</td>
 					</tr>
 				</table>
@@ -110,9 +110,4 @@ body {
 	</div>
 	
 </body>
-	<script>
-	function reset() {
-	document.getElementById('title').innerHTML="";
-        document.getElementById('brief').innerHTML="";
-		}
-	</script>
+	
