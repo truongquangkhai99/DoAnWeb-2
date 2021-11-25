@@ -69,7 +69,6 @@ public class ContentViewDAO {
 
 					// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-				System.out.println(preparedStatement);
 				// Step 3: Execute the query or update query
 				ResultSet rs = preparedStatement.executeQuery();
 

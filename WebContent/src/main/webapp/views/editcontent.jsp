@@ -57,6 +57,9 @@ body {
 	margin-top: 30px;
 	margin-left:30px;
 }
+#idcontent{
+	display:none;
+}
 </style>
 </head>
 
@@ -73,13 +76,13 @@ body {
 					<tr>
 						<td class="head">Content form Elements</td>
 					</tr>
+					<input  type="text" id="idcontent" name="id"  value="${id}" />
 					<tr>
 						<td style="padding-top: 20px"><lable>
 							<b>Title</b></lable></td>
 					</tr>
 					<tr>
-						<td><input type="text" id="title" name="title" minlength="10" maxlength="200"
-							value="${title}" placeholder="Enter the title" />
+						<td><input type="text" id="title" name="title" minlength="10" maxlength="200" value="${title}" placeholder="Enter the title" />
 						</td>
 					</tr>
 					<tr>

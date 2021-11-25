@@ -7,7 +7,10 @@ public class ContentEdit {
 	private String title;
 	private String brief;
 	private String content;
-	
+	public ContentEdit() {
+		super();
+
+	}
 
 	public ContentEdit(String title, String brief, String content) {
 		super();
