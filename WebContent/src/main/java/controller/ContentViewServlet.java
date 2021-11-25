@@ -47,7 +47,7 @@ public class ContentViewServlet extends HttpServlet {
 		
 		String spageid = request.getParameter("pageid");
 		int pageid =  Integer.parseInt(spageid);
-		int numRowPage = 10;// number row in a page =5
+		int numRowPage = 10;
 		
 		int numberpage = contentDAO.getCountPage(numRowPage);
 		List<ContentView> listContent = new ArrayList<ContentView>();

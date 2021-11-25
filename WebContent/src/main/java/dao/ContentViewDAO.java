@@ -1,7 +1,6 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,6 +9,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.sql.Timestamp;
 
@@ -21,7 +21,6 @@ public class ContentViewDAO {
 
 	
 
-	private static final String SELECT_ALL_CONTENT = "SELECT id,Title,Brief,CreatedDate FROM content;";
 	private static final String DELETE_CONTENT_BY_ID = "DELETE FROM content WHERE ID =?;";
 	DBContext context= new DBContext();
 	
@@ -79,7 +78,7 @@ public class ContentViewDAO {
 					String brief = rs.getString("Brief");
 					
 					Timestamp timestamp = rs.getTimestamp("CreatedDate");
-					java.util.Date date=timestamp;  
+					Date date=timestamp;  
 					String  timeStamp = new SimpleDateFormat("dd-MM-Y HH:mm").format(date);
 					timeStamp = timeStamp.replace('-', '/');	
 					contents.add(new ContentView(id, title, brief, timeStamp));
