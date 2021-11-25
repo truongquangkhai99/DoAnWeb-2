@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,9 +40,13 @@ public class LoginController extends HttpServlet {
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String remember = request.getParameter("remember");
+		
 		try {
 			LoginDAO dao = new LoginDAO();
-			Member member = dao.checkLogin(email, password);			
+
+			Member member = dao.checkLogin(email, password);	
+
 			if(member != null)
 			{				
 				String username = member.getUserName();
@@ -55,6 +60,19 @@ public class LoginController extends HttpServlet {
 				// set timeout session (seconds)
 				/* session.setMaxInactiveInterval(60); */
 				// login success
+				//Cokkie
+				Cookie e = new Cookie("emailC", member.getEmail());
+				Cookie p = new Cookie("passC", member.getPassword());
+				//Set time
+				e.setMaxAge(60);
+				if (remember != null)
+				{
+					p.setMaxAge(60);
+				} else {
+					p.setMaxAge(0);
+				}
+				response.addCookie(e);
+				response.addCookie(p);
 				response.sendRedirect("/WebContent/ViewContent?pageid=1");
 					
 			}else {			

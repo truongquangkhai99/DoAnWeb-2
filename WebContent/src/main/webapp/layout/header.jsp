@@ -8,7 +8,7 @@ CMS
 	 	 </span>
 	  <div class="dropdown-content">	
 		<p> <a href="editprofile"><i class="fa fa-user"> &nbsp; </i>User Profile</a> </p>
-		  <p><i class="fa fa-sign-in "> &nbsp;</i>Logout </p>
+		  <p><a href="/WebContent/Logout"><i class="fa fa-sign-in "> &nbsp;</i>Logout </a></p>
 	  </div>
 	</div>
 	
