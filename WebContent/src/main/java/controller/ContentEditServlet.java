@@ -39,14 +39,13 @@ public class ContentEditServlet extends HttpServlet {
 
 			response.setContentType("text/html;charset=UTF-8");
 			request.setCharacterEncoding("UTF-8");
-			doGet(request, response);
 			String title = request.getParameter("title");
 			String brief = request.getParameter("brief");
 			String content = request.getParameter("content");
 			String id = request.getParameter("id");
 			ContentEditDAO dao = new ContentEditDAO();
 			dao.updateContent(title, brief, content,id);
-			response.sendRedirect("edit-content.tiles");
+			response.sendRedirect("/WebContent/ViewContent?pageid=1");
 	}
 
 }

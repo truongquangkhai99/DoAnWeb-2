@@ -98,7 +98,7 @@ body {
 					</tr>
 					<tr>
 						<td>
-							<button type="submit" id="submit" formaction="/WebContent/ViewContent?pageid=1"
+							<button type="submit" id="submit" formaction="/WebContent/EditContent"
 								formmethod="post">Submit button</button>
 							<button type="button" id="reset" onclick="">Reset button</button>
 						</td>
