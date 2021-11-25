@@ -54,12 +54,11 @@
 						<td><lable> <b>Description</b></lable></td>
 					</tr>
 					<tr>
-						<td><input type="text" style="height: 60px" id="description"
-							name="description" value="${description}"></td>
+						<td><textarea rows="3"  name="description" id="description" form="formEditProfile" maxlength="200" >${description}</textarea></td>
 					</tr>
 					<tr>
 						<td>
-							<button type="submit" id="submit">Submit button</button>
+							<button type="submit" id="submit" formaction="/WebContent/ViewContent?pageid=1">Submit button</button>
 							<button type="submit" id="reset" formaction="editprofile"
 								formmethod="get">Reset button</button>
 						</td>

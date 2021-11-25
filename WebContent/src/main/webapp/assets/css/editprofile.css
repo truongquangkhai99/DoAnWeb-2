@@ -40,7 +40,7 @@ body {
 	border: 1px solid #e7e7e7;
 	background-color: #f8f8f8;
 }
-#editProfile textarea {
+#formEditProfile textarea {
 	width:80%;
 	border:1px solid #e7e7e7;
 	border-radius: 5px;

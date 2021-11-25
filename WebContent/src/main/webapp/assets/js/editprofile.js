@@ -31,7 +31,7 @@ $().ready(function() {
 				minlength: "Hãy nhập tối đa 3 ký tự"
 			},
 			"lastName": {
-				required: "Bắt buộc nhập password",
+				required: "Bắt buộc nhập lastName",
 				minlength: "Hãy nhập ít nhất 3 ký tự"
 			},
 			"phone": {
@@ -63,14 +63,9 @@ $(document).ready(function() {
 					email:email,
 					phone:phone,
 					description:description
-				}
-				
-			}),
-			$.ajax({
-				url:"/WebContent/ViewContent",
-				type:"get",
-				data:{
-					pageid:1
+				},
+				success :function(responseText){
+					
 				}
 				
 			})

@@ -50,7 +50,7 @@ public class EditprofileController extends HttpServlet {
 	throws SQLException,ServletException,IOException {
 		HttpSession session =request.getSession();
 		String id =session.getAttribute("id").toString();
-		System.out.println("Id nè quang selet" +id);
+		System.out.println("Id session" +id);
 		Editprofile result=null;
 		try {
 			result=memberserlet.selectProfile(id);
@@ -94,8 +94,9 @@ public class EditprofileController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher("view-content.tiles");
-		dispatcher.forward(request, response);
+		response.setContentType("text");
+        response.getWriter().write("update Thành công");
+       
 		
 	}
 	
